@@ -6,10 +6,11 @@ export const metadata = {
 };
 
 export default function Layout(props) {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   return (
-    <div className="container">
+    <html lang={lang || "en"}>
+    <body className="container">
       {props.children}
       <footer>
         <span>{t("common:powered")} </span>
@@ -25,6 +26,7 @@ export default function Layout(props) {
           next-translate
         </a>
       </footer>
-    </div>
+    </body>
+    </html>
   );
 }
